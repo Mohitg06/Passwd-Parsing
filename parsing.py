@@ -24,14 +24,14 @@ import fileinput
 
 # os.system("cat ./test_files/group | awk -F : '{print $1, $3}' > ./test_files/allgroup.txt")
 # os.system("cat ./test_files/passwd | awk -F : '{print $1,$3,$4,$5}' > ./test_files/allusers.txt")
+string_to_add = " XYZ"
 
 try:
     with open("/Users/mg250074/Documents/pythontest/Passwd-Parsing/test_files/allusers_1.txt", "a") as out_file:
 
         with open("/Users/mg250074/Documents/pythontest/Passwd-Parsing/test_files/allusers.txt", "r") as in_file:
             for line in in_file:
-                new = line + "Z"
-                out_file.write(new)
+                out_file.write(line.rstrip('\n') + string_to_add + '\n')
 
 except IOError:
     print ("File not found")

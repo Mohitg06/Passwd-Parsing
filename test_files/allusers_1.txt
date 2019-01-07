@@ -1,217 +1,108 @@
-##   
-# User Database   
-#    
-# Note that this file is consulted directly only when the system is running   
-# in single-user mode.  At other times this information is provided by   
-# Open Directory.   
-#   
-# See the opendirectoryd(8) man page for additional information about   
-# Open Directory.   
-##   
-nobody -2 -2 Unprivileged User
-root 0 0 System Administrator
-daemon 1 1 System Services
-_uucp 4 4 Unix to Unix Copy Protocol
-_taskgated 13 13 Task Gate Daemon
-_networkd 24 24 Network Services
-_installassistant 25 25 Install Assistant
-_lp 26 26 Printing Services
-_postfix 27 27 Postfix Mail Server
-_scsd 31 31 Service Configuration Service
-_ces 32 32 Certificate Enrollment Service
-_appstore 33 33 Mac App Store Service
-_mcxalr 54 54 MCX AppLaunch
-_appleevents 55 55 AppleEvents Daemon
-_geod 56 56 Geo Services Daemon
-_serialnumberd 58 58 Serial Number Daemon
-_devdocs 59 59 Developer Documentation
-_sandbox 60 60 Seatbelt
-_mdnsresponder 65 65 mDNSResponder
-_ard 67 67 Apple Remote Desktop
-_www 70 70 World Wide Web Server
-_eppc 71 71 Apple Events User
-_cvs 72 72 CVS Server
-_svn 73 73 SVN Server
-_mysql 74 74 MySQL Server
-_sshd 75 75 sshd Privilege separation
-_qtss 76 76 QuickTime Streaming Server
-_cyrus 77 6 Cyrus Administrator
-_mailman 78 78 Mailman List Server
-_appserver 79 79 Application Server
-_clamav 82 82 ClamAV Daemon
-_amavisd 83 83 AMaViS Daemon
-_jabber 84 84 Jabber XMPP Server
-_appowner 87 87 Application Owner
-_windowserver 88 88 WindowServer
-_spotlight 89 89 Spotlight
-_tokend 91 91 Token Daemon
-_securityagent 92 92 SecurityAgent
-_calendar 93 93 Calendar
-_teamsserver 94 94 TeamsServer
-_update_sharing 95 -2 Update Sharing
-_installer 96 -2 Installer
-_atsserver 97 97 ATS Server
-_ftp 98 -2 FTP Daemon
-_unknown 99 99 Unknown User
-_softwareupdate 200 200 Software Update Service
-_coreaudiod 202 202 Core Audio Daemon
-_screensaver 203 203 Screensaver
-_locationd 205 205 Location Daemon
-_trustevaluationagent 208 208 Trust Evaluation Agent
-_timezone 210 210 AutoTimeZoneDaemon
-_lda 211 211 Local Delivery Agent
-_cvmsroot 212 212 CVMS Root
-_usbmuxd 213 213 iPhone OS Device Helper
-_dovecot 214 6 Dovecot Administrator
-_dpaudio 215 215 DP Audio
-_postgres 216 216 PostgreSQL Server
-_krbtgt 217 -2 Kerberos Ticket Granting Ticket
-_kadmin_admin 218 -2 Kerberos Admin Service
-_kadmin_changepw 219 -2 Kerberos Change Password Service
-_devicemgr 220 220 Device Management Server
-_webauthserver 221 221 Web Auth Server
-_netbios 222 222 NetBIOS
-_warmd 224 224 Warm Daemon
-_dovenull 227 227 Dovecot Authentication
-_netstatistics 228 228 Network Statistics Daemon
-_avbdeviced 229 -2 Ethernet AVB Device Daemon
-_krb_krbtgt 230 -2 Open Directory Kerberos Ticket Granting Ticket
-_krb_kadmin 231 -2 Open Directory Kerberos Admin Service
-_krb_changepw 232 -2 Open Directory Kerberos Change Password Service
-_krb_kerberos 233 -2 Open Directory Kerberos
-_krb_anonymous 234 -2 Open Directory Kerberos Anonymous
-_assetcache 235 235 Asset Cache Service
-_coremediaiod 236 236 Core Media IO Daemon
-_launchservicesd 239 239 _launchservicesd
-_iconservices 240 240 IconServices
-_distnote 241 241 DistNote
-_nsurlsessiond 242 242 NSURLSession Daemon
-_nsurlstoraged 243 243 NSURLStorage Daemon
-_displaypolicyd 244 244 Display Policy Daemon
-_astris 245 245 Astris Services
-_krbfast 246 -2 Kerberos FAST Account
-_gamecontrollerd 247 247 Game Controller Daemon
-_mbsetupuser 248 248 Setup User
-_ondemand 249 249 On Demand Resource Daemon
-_xserverdocs 251 251 macOS Server Documents Service
-_wwwproxy 252 252 WWW Proxy
-_mobileasset 253 253 MobileAsset User
-_findmydevice 254 254 Find My Device Daemon
-_datadetectors 257 257 DataDetectors
-_captiveagent 258 258 captiveagent
-_ctkd 259 259 ctkd Account
-_applepay 260 260 applepay Account
-_hidd 261 261 HID Service User
-_cmiodalassistants 262 262 CoreMedia IO Assistants User
-_analyticsd 263 263 Analytics Daemon
-_fpsd 265 265 FPS Daemon
-_timed 266 266 Time Sync Daemon
-##   
-Z# User Database   
-Z#    
-Z# Note that this file is consulted directly only when the system is running   
-Z# in single-user mode.  At other times this information is provided by   
-Z# Open Directory.   
-Z#   
-Z# See the opendirectoryd(8) man page for additional information about   
-Z# Open Directory.   
-Z##   
-Znobody -2 -2 Unprivileged User
-Zroot 0 0 System Administrator
-Zdaemon 1 1 System Services
-Z_uucp 4 4 Unix to Unix Copy Protocol
-Z_taskgated 13 13 Task Gate Daemon
-Z_networkd 24 24 Network Services
-Z_installassistant 25 25 Install Assistant
-Z_lp 26 26 Printing Services
-Z_postfix 27 27 Postfix Mail Server
-Z_scsd 31 31 Service Configuration Service
-Z_ces 32 32 Certificate Enrollment Service
-Z_appstore 33 33 Mac App Store Service
-Z_mcxalr 54 54 MCX AppLaunch
-Z_appleevents 55 55 AppleEvents Daemon
-Z_geod 56 56 Geo Services Daemon
-Z_serialnumberd 58 58 Serial Number Daemon
-Z_devdocs 59 59 Developer Documentation
-Z_sandbox 60 60 Seatbelt
-Z_mdnsresponder 65 65 mDNSResponder
-Z_ard 67 67 Apple Remote Desktop
-Z_www 70 70 World Wide Web Server
-Z_eppc 71 71 Apple Events User
-Z_cvs 72 72 CVS Server
-Z_svn 73 73 SVN Server
-Z_mysql 74 74 MySQL Server
-Z_sshd 75 75 sshd Privilege separation
-Z_qtss 76 76 QuickTime Streaming Server
-Z_cyrus 77 6 Cyrus Administrator
-Z_mailman 78 78 Mailman List Server
-Z_appserver 79 79 Application Server
-Z_clamav 82 82 ClamAV Daemon
-Z_amavisd 83 83 AMaViS Daemon
-Z_jabber 84 84 Jabber XMPP Server
-Z_appowner 87 87 Application Owner
-Z_windowserver 88 88 WindowServer
-Z_spotlight 89 89 Spotlight
-Z_tokend 91 91 Token Daemon
-Z_securityagent 92 92 SecurityAgent
-Z_calendar 93 93 Calendar
-Z_teamsserver 94 94 TeamsServer
-Z_update_sharing 95 -2 Update Sharing
-Z_installer 96 -2 Installer
-Z_atsserver 97 97 ATS Server
-Z_ftp 98 -2 FTP Daemon
-Z_unknown 99 99 Unknown User
-Z_softwareupdate 200 200 Software Update Service
-Z_coreaudiod 202 202 Core Audio Daemon
-Z_screensaver 203 203 Screensaver
-Z_locationd 205 205 Location Daemon
-Z_trustevaluationagent 208 208 Trust Evaluation Agent
-Z_timezone 210 210 AutoTimeZoneDaemon
-Z_lda 211 211 Local Delivery Agent
-Z_cvmsroot 212 212 CVMS Root
-Z_usbmuxd 213 213 iPhone OS Device Helper
-Z_dovecot 214 6 Dovecot Administrator
-Z_dpaudio 215 215 DP Audio
-Z_postgres 216 216 PostgreSQL Server
-Z_krbtgt 217 -2 Kerberos Ticket Granting Ticket
-Z_kadmin_admin 218 -2 Kerberos Admin Service
-Z_kadmin_changepw 219 -2 Kerberos Change Password Service
-Z_devicemgr 220 220 Device Management Server
-Z_webauthserver 221 221 Web Auth Server
-Z_netbios 222 222 NetBIOS
-Z_warmd 224 224 Warm Daemon
-Z_dovenull 227 227 Dovecot Authentication
-Z_netstatistics 228 228 Network Statistics Daemon
-Z_avbdeviced 229 -2 Ethernet AVB Device Daemon
-Z_krb_krbtgt 230 -2 Open Directory Kerberos Ticket Granting Ticket
-Z_krb_kadmin 231 -2 Open Directory Kerberos Admin Service
-Z_krb_changepw 232 -2 Open Directory Kerberos Change Password Service
-Z_krb_kerberos 233 -2 Open Directory Kerberos
-Z_krb_anonymous 234 -2 Open Directory Kerberos Anonymous
-Z_assetcache 235 235 Asset Cache Service
-Z_coremediaiod 236 236 Core Media IO Daemon
-Z_launchservicesd 239 239 _launchservicesd
-Z_iconservices 240 240 IconServices
-Z_distnote 241 241 DistNote
-Z_nsurlsessiond 242 242 NSURLSession Daemon
-Z_nsurlstoraged 243 243 NSURLStorage Daemon
-Z_displaypolicyd 244 244 Display Policy Daemon
-Z_astris 245 245 Astris Services
-Z_krbfast 246 -2 Kerberos FAST Account
-Z_gamecontrollerd 247 247 Game Controller Daemon
-Z_mbsetupuser 248 248 Setup User
-Z_ondemand 249 249 On Demand Resource Daemon
-Z_xserverdocs 251 251 macOS Server Documents Service
-Z_wwwproxy 252 252 WWW Proxy
-Z_mobileasset 253 253 MobileAsset User
-Z_findmydevice 254 254 Find My Device Daemon
-Z_datadetectors 257 257 DataDetectors
-Z_captiveagent 258 258 captiveagent
-Z_ctkd 259 259 ctkd Account
-Z_applepay 260 260 applepay Account
-Z_hidd 261 261 HID Service User
-Z_cmiodalassistants 262 262 CoreMedia IO Assistants User
-Z_analyticsd 263 263 Analytics Daemon
-Z_fpsd 265 265 FPS Daemon
-Z_timed 266 266 Time Sync Daemon
-Z
+##    XYZ
+# User Database    XYZ
+#     XYZ
+# Note that this file is consulted directly only when the system is running    XYZ
+# in single-user mode.  At other times this information is provided by    XYZ
+# Open Directory.    XYZ
+#    XYZ
+# See the opendirectoryd(8) man page for additional information about    XYZ
+# Open Directory.    XYZ
+##    XYZ
+nobody -2 -2 Unprivileged User XYZ
+root 0 0 System Administrator XYZ
+daemon 1 1 System Services XYZ
+_uucp 4 4 Unix to Unix Copy Protocol XYZ
+_taskgated 13 13 Task Gate Daemon XYZ
+_networkd 24 24 Network Services XYZ
+_installassistant 25 25 Install Assistant XYZ
+_lp 26 26 Printing Services XYZ
+_postfix 27 27 Postfix Mail Server XYZ
+_scsd 31 31 Service Configuration Service XYZ
+_ces 32 32 Certificate Enrollment Service XYZ
+_appstore 33 33 Mac App Store Service XYZ
+_mcxalr 54 54 MCX AppLaunch XYZ
+_appleevents 55 55 AppleEvents Daemon XYZ
+_geod 56 56 Geo Services Daemon XYZ
+_serialnumberd 58 58 Serial Number Daemon XYZ
+_devdocs 59 59 Developer Documentation XYZ
+_sandbox 60 60 Seatbelt XYZ
+_mdnsresponder 65 65 mDNSResponder XYZ
+_ard 67 67 Apple Remote Desktop XYZ
+_www 70 70 World Wide Web Server XYZ
+_eppc 71 71 Apple Events User XYZ
+_cvs 72 72 CVS Server XYZ
+_svn 73 73 SVN Server XYZ
+_mysql 74 74 MySQL Server XYZ
+_sshd 75 75 sshd Privilege separation XYZ
+_qtss 76 76 QuickTime Streaming Server XYZ
+_cyrus 77 6 Cyrus Administrator XYZ
+_mailman 78 78 Mailman List Server XYZ
+_appserver 79 79 Application Server XYZ
+_clamav 82 82 ClamAV Daemon XYZ
+_amavisd 83 83 AMaViS Daemon XYZ
+_jabber 84 84 Jabber XMPP Server XYZ
+_appowner 87 87 Application Owner XYZ
+_windowserver 88 88 WindowServer XYZ
+_spotlight 89 89 Spotlight XYZ
+_tokend 91 91 Token Daemon XYZ
+_securityagent 92 92 SecurityAgent XYZ
+_calendar 93 93 Calendar XYZ
+_teamsserver 94 94 TeamsServer XYZ
+_update_sharing 95 -2 Update Sharing XYZ
+_installer 96 -2 Installer XYZ
+_atsserver 97 97 ATS Server XYZ
+_ftp 98 -2 FTP Daemon XYZ
+_unknown 99 99 Unknown User XYZ
+_softwareupdate 200 200 Software Update Service XYZ
+_coreaudiod 202 202 Core Audio Daemon XYZ
+_screensaver 203 203 Screensaver XYZ
+_locationd 205 205 Location Daemon XYZ
+_trustevaluationagent 208 208 Trust Evaluation Agent XYZ
+_timezone 210 210 AutoTimeZoneDaemon XYZ
+_lda 211 211 Local Delivery Agent XYZ
+_cvmsroot 212 212 CVMS Root XYZ
+_usbmuxd 213 213 iPhone OS Device Helper XYZ
+_dovecot 214 6 Dovecot Administrator XYZ
+_dpaudio 215 215 DP Audio XYZ
+_postgres 216 216 PostgreSQL Server XYZ
+_krbtgt 217 -2 Kerberos Ticket Granting Ticket XYZ
+_kadmin_admin 218 -2 Kerberos Admin Service XYZ
+_kadmin_changepw 219 -2 Kerberos Change Password Service XYZ
+_devicemgr 220 220 Device Management Server XYZ
+_webauthserver 221 221 Web Auth Server XYZ
+_netbios 222 222 NetBIOS XYZ
+_warmd 224 224 Warm Daemon XYZ
+_dovenull 227 227 Dovecot Authentication XYZ
+_netstatistics 228 228 Network Statistics Daemon XYZ
+_avbdeviced 229 -2 Ethernet AVB Device Daemon XYZ
+_krb_krbtgt 230 -2 Open Directory Kerberos Ticket Granting Ticket XYZ
+_krb_kadmin 231 -2 Open Directory Kerberos Admin Service XYZ
+_krb_changepw 232 -2 Open Directory Kerberos Change Password Service XYZ
+_krb_kerberos 233 -2 Open Directory Kerberos XYZ
+_krb_anonymous 234 -2 Open Directory Kerberos Anonymous XYZ
+_assetcache 235 235 Asset Cache Service XYZ
+_coremediaiod 236 236 Core Media IO Daemon XYZ
+_launchservicesd 239 239 _launchservicesd XYZ
+_iconservices 240 240 IconServices XYZ
+_distnote 241 241 DistNote XYZ
+_nsurlsessiond 242 242 NSURLSession Daemon XYZ
+_nsurlstoraged 243 243 NSURLStorage Daemon XYZ
+_displaypolicyd 244 244 Display Policy Daemon XYZ
+_astris 245 245 Astris Services XYZ
+_krbfast 246 -2 Kerberos FAST Account XYZ
+_gamecontrollerd 247 247 Game Controller Daemon XYZ
+_mbsetupuser 248 248 Setup User XYZ
+_ondemand 249 249 On Demand Resource Daemon XYZ
+_xserverdocs 251 251 macOS Server Documents Service XYZ
+_wwwproxy 252 252 WWW Proxy XYZ
+_mobileasset 253 253 MobileAsset User XYZ
+_findmydevice 254 254 Find My Device Daemon XYZ
+_datadetectors 257 257 DataDetectors XYZ
+_captiveagent 258 258 captiveagent XYZ
+_ctkd 259 259 ctkd Account XYZ
+_applepay 260 260 applepay Account XYZ
+_hidd 261 261 HID Service User XYZ
+_cmiodalassistants 262 262 CoreMedia IO Assistants User XYZ
+_analyticsd 263 263 Analytics Daemon XYZ
+_fpsd 265 265 FPS Daemon XYZ
+_timed 266 266 Time Sync Daemon XYZ
