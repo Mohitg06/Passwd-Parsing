@@ -1,4 +1,4 @@
-nobody everyone localaccounts 1 _lpoperator
+y everyone localaccounts 1 _lpoperator
 wheel daemon kmem sys tty operator procview procmod everyone staff certusers localaccounts admin 1 _appstore _lpadmin _lpoperator _developer _analyticsusers com.apple.access_ftp com.apple.access_screensharing com.apple.access_ssh
 daemon everyone localaccounts 1 _lpoperator
 tty everyone localaccounts 1 _lpoperator
