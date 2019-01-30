@@ -1,15 +1,5 @@
-##   
-# User Database   
-#    
-# Note that this file is consulted directly only when the system is running   
-# in single-user mode.  At other times this information is provided by   
-# Open Directory.   
-#   
-# See the opendirectoryd(8) man page for additional information about   
-# Open Directory.   
-##   
 nobody -2 -2 Unprivileged User
-root 0 0 System Administrator
+root 0 35 System Administrator
 daemon 1 1 System Services
 _uucp 4 4 Unix to Unix Copy Protocol
 _taskgated 13 13 Task Gate Daemon
