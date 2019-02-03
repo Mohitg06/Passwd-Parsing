@@ -1,4 +1,4 @@
-run:
+build:
 	python parsing.py
 
 test:
