@@ -1,5 +1,6 @@
 build:
-	python parsing.py
+	python parsing.py /etc/passwd /etc/group
+
 
 test:
 	python -m pytest tests/

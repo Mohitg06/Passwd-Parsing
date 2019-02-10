@@ -1,6 +1,6 @@
 
 from parsing import Parsing
-import json
+
 
 __author__ = 'Mohit Gadkari'
 
@@ -31,7 +31,7 @@ class Test_Parser:
 
 # Count of user names in passwd file should match json file
 # Error handling test case
-# cron job
+
 
 
 

@@ -1,63 +1,84 @@
+'''
+# Function get_json_dump returns required data as a dictionary
+# lines starting with # are excluded from operation for file parsing
+# The strip() method returns a copy of the string with both leading and trailing characters removed
+# then each row is divided into a list
+# fullmatch keyword returns true for 1:1 and 1:10
+# "\n" at the end of every line was taken out from the list of groups
+# temp variable keeps track if any group id in the passwd file does not exist in group file
+# OrderedDict() maintains the sequence of elements in a row
+# all key value pairs for the dict json_dump are dumped in a json file
+'''
 
-
-import os
-import sys
-import fileinput
 import re
 import json
-import csv
-
+import sys
+from collections import OrderedDict
 
 class Parsing:
 
-    out_group = ("./out_group.txt")
-    jsonFilePath = ("./final_users_with_groups.json")
-    data = {}
-    with open(out_group , "w") as out_file:
-        out_file.write("username;uid;full_name;groups\n")
+    passwd_file_path=(sys.argv[1])
+    group_file_path = (sys.argv[2])
+    jsonFilePath = "./final_users_with_groups.json"
 
-        with open("/etc/passwd", "r") as passwd_file:
+    if passwd_file_path != "/etc/passwd":
+        print ("Enter right file path for passwd")
+        sys.exit (0)
+
+    if group_file_path != "/etc/group":
+        print ("Enter right file path for groups")
+        sys.exit (0)
+
+    def get_json_dump(passwd_file_path, group_file_path):
+        dict_passwd = OrderedDict()
+        dict_group = OrderedDict()
+
+        with open(passwd_file_path, "r") as passwd_file:
             for row_passwd in passwd_file:
-                ki = row_passwd.strip()
+                x = row_passwd.strip()
+                if not x.startswith("#"):
+                    passwd_column = x.split(':')
+                    key_passwd = passwd_column[0]
+                    dict_passwd[key_passwd] = passwd_column[3], passwd_column[2], passwd_column[
+                        4]  # group id, uid, full_name
 
-                if not ki.startswith("#"):  ## excluding first few comments in the file "passwd"
-                    key = row_passwd.split(':')
+        with open(group_file_path, "r") as group_file:
+            for row_group in group_file:
+                y = row_group.strip()
 
-                    with open("/etc/group", "r") as group_file:
-                        temp = 0
+                if not y.startswith("#"):
+                    group_column = y.split(':')
+                    group_column[-1] = group_column[-1].rstrip('\n')
+                    key_group = group_column[2]
+                    dict_group[key_group] = group_column[3:]
 
-                        for row_group in group_file:
-                            li = row_group.strip()
+        json_dump = OrderedDict()
 
-                            if not li.startswith(
-                                    "#"):  ## excluding first few comments in the file "group"
-                                lock = li.split(':')
+        for key_passwd, value_passwd in dict_passwd.items():
+            temp = 0
+            for key_group, value_group in dict_group.items():
+                if re.fullmatch(value_passwd[0], key_group):
+                    temp = temp + 1
+                    obj = OrderedDict()
+                    obj["uid"] = value_passwd[1]
+                    obj["full_name"] = value_passwd[2]
+                    obj["group"] = value_group
+                    json_dump[key_passwd] = obj
+            if temp == 0:
+                obj = OrderedDict()
+                obj["uid"] = value_passwd[1]
+                obj["full_name"] = value_passwd[2]
+                obj["group"] = "Error: Info does not exist"
+                json_dump[key_passwd] = obj
 
-                                _uid = {"uid": key[2]}
-                                _fullname = {"full_name": key[4]}
-                                _groups = {"groups": lock[3:]}
+        return OrderedDict(json_dump)
 
-                                if re.fullmatch(key[3], lock[
-                                    2]):  ## fullmatch keyword returns True for'1' match with '1' and False for 1' match with '10'
-                                    out_file.write('{0};{1};{2};{3}\n'.format(key[0], _uid, _fullname,
-                                                                              _groups))  ## username, uid, fullname, groups
-                                    temp = +1  # temp variable incremented when when fullmatch found
+    with open(jsonFilePath, "w") as f:
+        json.dump(get_json_dump(passwd_file_path, group_file_path), f, indent=4)
 
-                        if temp == 0:  # at the end of parsing group file, if temp variable equates to zero, that means error condition
-                            out_file.write(
-                                '{0};{1};{2};ERROR: no info found for group id {3}\n'.format(list(key[0]), _uid,
-                                                                                             _fullname,
-                                                                                             _groups))  ## username, uid, fullname, error message
 
-    with open(out_group) as csvFile:
-        csvReader = csv.DictReader(csvFile, delimiter=';')
 
-        for csvRow in csvReader:
-            username = csvRow["username"]  # initialize item to be parsed as a key
-            data[username] = csvRow['uid'], csvRow['full_name'], csvRow['groups']
 
-    with open(jsonFilePath, "w") as jsonFile:
-        jsonFile.write(json.dumps(data, indent=4))
 
 
 
