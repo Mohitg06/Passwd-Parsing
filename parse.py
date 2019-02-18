@@ -56,8 +56,12 @@ class Parse():
         if not os.path.exists(self.jsonFileDirectory):
             try:
                 os.makedirs(self.jsonFileDirectory)
-            except OSError:
+            except OSError as e:
                 raise Exception('Error: Permission denied to create output directory at {}'.format(self.jsonFile))
+
+
+
+
 
     def get_json_dump(passwd_file_path, group_file_path):
 
