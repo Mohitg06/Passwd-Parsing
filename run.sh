@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python parsing.py
+python parse.py

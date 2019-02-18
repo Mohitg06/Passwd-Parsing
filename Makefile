@@ -1,6 +1,8 @@
 build:
-	python parsing.py
+	python parse.py
 
 
 test:
-	python -m pytest tests/
+
+
+	python -m pytest
