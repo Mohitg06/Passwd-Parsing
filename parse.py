@@ -31,26 +31,27 @@ import argparse
 import logging
 
 class Parse():
-    global logger
-    logger = logging.getLogger(__name__)
 
-    timestr = "output_" + time.strftime("%Y_%m_%d_%H_%M_%S")
-    jsonFile = "./LOGS/OUTPUT/{}.json".format(timestr)
-    jsonFileDirectory = os.path.dirname(jsonFile)
+    def __init__(self):
+        self.logger=logging.getLogger(__name__)
+        self.timestr = "output_" + time.strftime("%Y_%m_%d_%H_%M_%S")
+        self.jsonFile = "./LOGS/OUTPUT/{}.json".format(self.timestr)
+        self.jsonFileDirectory = os.path.dirname(self.jsonFile)
 
-    hdlr = logging.FileHandler('./LOGS/logging.log')
-    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-    hdlr.setFormatter(formatter)
-    logger.addHandler(hdlr)
-    logger.setLevel(logging.INFO)
+        self.hdlr = logging.FileHandler('./LOGS/logging.log')
+        self.formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+        self.hdlr.setFormatter(self.formatter)
+        self.logger.addHandler(self.hdlr)
+        self.logger.setLevel(logging.INFO)
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--passwd", help="passwd file path", default="/etc/passwd")
-    parser.add_argument("--group", help="group file path", default="/etc/group")
+        self.parser = argparse.ArgumentParser()
+        self.parser.add_argument("--passwd", help="passwd file path", default="/etc/passwd")
+        self.parser.add_argument("--group", help="group file path", default="/etc/group")
 
-    args = parser.parse_args()
-    passwd_file_path = args.passwd
-    group_file_path = args.group
+        self.args = self.parser.parse_args()
+        self.passwd_file_path = self.args.passwd
+        self.group_file_path = self.args.group
+
 
     def path(self):
         if not os.path.exists(self.jsonFileDirectory):
@@ -60,10 +61,7 @@ class Parse():
                 raise Exception('Error: Permission denied to create output directory at {}'.format(self.jsonFile))
 
 
-
-
-
-    def get_json_dump(passwd_file_path, group_file_path):
+    def get_json_dump(self,passwd_file_path, group_file_path):
 
         dict_passwd = OrderedDict()
         dict_group = OrderedDict()
@@ -82,13 +80,13 @@ class Parse():
                             dict_passwd[key_passwd] = passwd_column[3], passwd_column[2], passwd_column[
                                 4]  # group id, uid, full_name
         except IsADirectoryError as err:
-            logger.error("Error: Program cannot read Directory, please enter coorect passwd file")
+            self.logger.error("Error: Program cannot read Directory, please enter coorect passwd file")
         except PermissionError as err:
-            logger.error("Error: Program does not have permission to read passwd file, please check permissions")
+            self.logger.error("Error: Program does not have permission to read passwd file, please check permissions")
         except IOError as err:
-            logger.error("I/O Error: Program failed to access passwd file")
+            self.logger.error("I/O Error: Program failed to access passwd file")
         except:
-            logger.error("Error: Unexpected error accessing passwd file")
+            self.logger.error("Error: Unexpected error accessing passwd file")
             sys.exit(1)
 
         try:
@@ -105,14 +103,14 @@ class Parse():
                             key_group = group_column[2]
                             dict_group[key_group] = group_column[3:]
         except IsADirectoryError as err:
-            logger.error("Error: Program cannot read Directory, please enter coorect group file", exc_info=True)
+            self.logger.error("Error: Program cannot read Directory, please enter coorect group file", exc_info=True)
         except PermissionError as err:
-            logger.error("Error: Program does not have permission to read group file, please check permissions",
+            self.logger.error("Error: Program does not have permission to read group file, please check permissions",
                          exc_info=True)
         except IOError as err:
-            logger.error("I/O Error: Program failed to access group file", exc_info=True)
+            self.logger.error("I/O Error: Program failed to access group file", exc_info=True)
         except:
-            logger.error("Error: Unexpected error accessing group file",
+            self.logger.error("Error: Unexpected error accessing group file",
                          exc_info=True)  # change print statment to consider above raise exception
             sys.exit(1)
 
@@ -137,17 +135,27 @@ class Parse():
 
         return OrderedDict(json_dump)
 
-    try:
-        with open(jsonFile, "w") as f:
-            json.dump(get_json_dump(passwd_file_path, group_file_path), f, indent=4)
-            logger.info('{} file created'.format(jsonFile))
-    except PermissionError as err:
-        print("Error: Program does not have permission to write output json file {}, please check permissions".format(
-            jsonFile))
-    except:
-        print("Error: Unexpected error accessing group file")
+
+    def json_print(self):
+        try:
+            with open(self.jsonFile, "w") as f:
+                json.dump(self.get_json_dump(self.passwd_file_path, self.group_file_path), f, indent=4)
+                self.logger.info('{} file created'.format(self.jsonFile))
+
+        except PermissionError as err:
+            print(
+                "Error: Program does not have permission to write output json file {}, please check permissions".format(
+                    self.jsonFile))
+
+        except:
+            print("Error: Unexpected error accessing group file")
 
 
+
+
+
+json_print=Parse()
+json_print.json_print()
 
 
 
