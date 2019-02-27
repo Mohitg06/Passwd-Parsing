@@ -15,7 +15,7 @@ for tracking.
 ## How to run this code
 
 Make file is created and the code can be run by below commands
-```bash
+
 make build  ( to run the code)
 make test ( to run the tests)
 
